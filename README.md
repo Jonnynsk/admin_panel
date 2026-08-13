@@ -15,9 +15,3 @@ cp .env.example .env
 npm install
 npm run dev
 ```
-
-## GitHub Pages
-
-Деплой через Actions (`.github/workflows/deploy-pages.yml`) на push в `master`.
-
-В Settings → Pages → **Source** выбери **GitHub Actions** (не «Deploy from a branch»).
