@@ -7,7 +7,7 @@ import {
 } from './tokens'
 
 const BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || 'http://rest-test.machineheads.ru'
+  import.meta.env.VITE_API_BASE_URL || 'https://rest-test.machineheads.ru'
 
 const REFRESH_URL = '/auth/token-refresh'
 
@@ -50,7 +50,7 @@ let failedQueue: QueueItem[] = []
 let refreshAbortController: AbortController | null = null
 
 let onUnauthorized: UnauthorizedHandler = () => {
-  window.location.assign('/login')
+  window.location.assign(`${import.meta.env.BASE_URL}login`)
 }
 
 export const setUnauthorizedHandler = (handler: UnauthorizedHandler): void => {

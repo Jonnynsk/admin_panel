@@ -1,3 +1,10 @@
 import { createBrowserHistory } from 'history'
 
-export const history = createBrowserHistory()
+const basename =
+  import.meta.env.BASE_URL === '/'
+    ? undefined
+    : import.meta.env.BASE_URL.replace(/\/$/, '')
+
+export const history = createBrowserHistory(
+  basename ? { basename } : undefined,
+)
